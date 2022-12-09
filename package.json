@@ -1,0 +1,47 @@
+{
+  "name": "backend-interview-template",
+  "version": "0.0.0",
+  "description": "A clean template to be used during backend engineer's interview.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc --noEmitOnError",
+    "clean": "rimraf dist coverage",
+    "commit": "git-cz",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky install",
+    "report": "npm run lint && npm run build && node dist/index.js",
+    "test": "jest --detectOpenHandles --coverage"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/jest": "^29.2.0",
+    "@types/node": "^18.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.1.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^29.2.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "sort-package-json": "^2.0.0",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "axios": "^1.2.1",
+    "fs": "*",
+    "json2csv": "^5.0.7"
+  }
+}
